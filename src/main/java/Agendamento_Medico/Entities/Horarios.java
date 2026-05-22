@@ -1,11 +1,17 @@
 package Agendamento_Medico.Entities;
 
 public class Horarios {
-    public double[] horario = {10.00, 12.30, 7.00, 8.00, 11.00};
-    public String[] especialidadeDesejada = {"Dentista", "Psicologo", "Ortopedista", "Cardiologista", "Pediatra"};
-    public boolean[] horarioDisponivel = {true, false, false, true, true};
-    public double horarioAtual;
-    public int especialistaAtual;
+    private double[] horario;
+    private String[] especialidadeDesejada;
+    private boolean[] horarioDisponivel;
+    private double horarioAtual;
+    private int especialistaAtual;
+
+    public Horarios() {
+        this.horario = new double[]{10.00, 12.30, 7.00, 8.00, 11.00};
+        this.especialidadeDesejada = new String[]{"Dentista", "Psicologo", "Ortopedista", "Cardiologista", "Pediatra"};
+        this.horarioDisponivel = new boolean[]{true, false, false, true, true};
+    }
 
     public boolean verificarHorarios(double h) {
         boolean temHorario = false;
@@ -25,7 +31,6 @@ public class Horarios {
         }
         return false;
     }
-
 
     public boolean verificarEspecialidade(String esp) {
         boolean temEspecialista = false;
